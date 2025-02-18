@@ -1,6 +1,10 @@
+// install npm i easymde --legacy-peer-deps to fix the easymd css problem after installing markdown 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "easymde/dist/easymde.min.css";
+
+
 
 const workSans = localFont({
   src:[{

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
 import { Author, Startup } from '@/sanity/types'
+import { Skeleton } from './ui/skeleton'
 
 export type StartupTypeCard = Omit<Startup,"author"> & {author?:Author};
 const StartupCard = ({item}:{item:StartupTypeCard}) => {
@@ -45,6 +46,16 @@ const StartupCard = ({item}:{item:StartupTypeCard}) => {
       </div>
     </li>
   )
+};
+
+export const StartupCardSkeleton = ()=>{
+  return<>
+  {[0,1,2,3,4].map((i)=>(
+    <li key={i}>
+    <Skeleton className='startup-card_skeleton'/>
+    </li>
+))}
+  </>
 }
 
 export default StartupCard

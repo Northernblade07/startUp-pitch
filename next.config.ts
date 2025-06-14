@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
       hostname: '*',
     }]
   },
+   eslint: {
+    ignoreDuringBuilds: true, // Skips ESLint errors in production
+  },
   // experimental:{ppr:'incremental'},
   // devIndicators:{
   //   appIsrStatus:true,

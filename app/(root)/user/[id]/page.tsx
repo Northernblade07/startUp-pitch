@@ -2,7 +2,7 @@ import { auth } from '@/auth';
 import { StartupCardSkeleton } from '@/components/StartupCard';
 import UserStartup from '@/components/UserStartup';
 import { client } from '@/sanity/lib/client';
-import { AUTHOR_BY_ID_QUERY, STARTUP_BY_ID_QUERY } from '@/sanity/lib/queries';
+import { AUTHOR_BY_ID_QUERY } from '@/sanity/lib/queries';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React, { Suspense } from 'react'

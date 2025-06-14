@@ -18,7 +18,7 @@ const StartupForm = () => {
     
     //   useActionState hook from the react and use it for submitting the form fields 
 
-const handleFormSubmit =async(prevState:any,formData:FormData)=>{
+const handleFormSubmit =async(prevState:FormData,formData:FormData)=>{
     try {
         setError({});
         const formValues = {
@@ -54,7 +54,7 @@ const handleFormSubmit =async(prevState:any,formData:FormData)=>{
     }
 }
 
-const [state,formAction,isPending] =useActionState(handleFormSubmit,{error:"" , status:"INITIAL"});
+const [formAction,isPending] =useActionState(handleFormSubmit,{error:"" , status:"INITIAL"});
     return (
         <form action={formAction} className='startup-form'>
             <div>
@@ -89,8 +89,8 @@ const [state,formAction,isPending] =useActionState(handleFormSubmit,{error:"" , 
             </div>
   
 
-        <Button className='startup-form_btn' type='submit' disabled={isPending}>{isPending?'submitting...':
-            'submit'}</Button>
+        <Button className='startup-form_btn' type='submit' disabled={isPending}>
+            {isPending?'submitting...':'submit'}</Button>
 
         </form>
     )

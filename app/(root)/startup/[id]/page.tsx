@@ -9,6 +9,7 @@ import React, { Suspense } from 'react'
 import markdownit from 'markdown-it'
 import { Skeleton } from '@/components/ui/skeleton';
 import View from '@/components/View';
+import Image from 'next/image';
 
 const md = markdownit()
 // install npm i  markdown-it to get a markdown 
@@ -35,11 +36,11 @@ const page = async({params}:{params:Promise<{id:string}>}) => {
       <p className='sub-heading'>{post.description}</p>
     </section>
     <section className='section_container'>
-   <img src={post.image} alt='thumbnail' className='w-full h-auto rounded-xl'/>
+   <Image src={post.image} alt='thumbnail' className='w-full h-auto rounded-xl'/>
    <div className='space-y-5 mt-10 max-w-4xl mx-auto'>
     <div className='flex-between'>
       <Link href={`/user/${post.author?._id}`} className='flex gap-2 items-center mb-3'>
-      <img src={post.author.image} alt='author image' height={64} width={64} className='rounded-full drop-shadow-lg'/>
+      <Image src={post.author.image} alt='author image' height={64} width={64} className='rounded-full drop-shadow-lg'/>
 
       <div>
         <p className='text-20-medium'>{post.author.name}</p>

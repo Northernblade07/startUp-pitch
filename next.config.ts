@@ -9,12 +9,12 @@ const nextConfig: NextConfig = {
       hostname: '*',
     }]
   },
-  experimental:{ppr:'incremental'},
-  devIndicators:{
-    appIsrStatus:true,
-    buildActivity:true,
-    buildActivityPosition:'bottom-left'
-  }
+  // experimental:{ppr:'incremental'},
+  // devIndicators:{
+  //   appIsrStatus:true,
+  //   buildActivity:true,
+  //   buildActivityPosition:'bottom-left'
+  // }
 };
 
 export default nextConfig;
